@@ -1,0 +1,10 @@
+sudo: false
+language: node_js
+before_script: node seedDb.js
+node_js:
+- '6.4'
+- '6.1'
+- '5.0'
+- '4.0'
+services:
+- mongodb

@@ -1,0 +1,55 @@
+{
+	"filePaths": {
+		"js": "./src/*.js",
+		"css": "./public/*.css",
+		"less": "./public/stylesheets/main.less",
+		"html": "./views/*.html",
+		"bowerRoot": "./bower_components",
+        "logPath": "./logs"
+	},
+    "security": {
+        "saltLength": 256
+    },
+    "port": 8080,    
+    "liveReloadPort": 35729,
+    "appPath": "./app.js",
+    "startPath": "./bin/www",
+    "start": "gulp watch",
+    "logFileName": "bb.log",
+    "logFileDatePattern": ".yyyy-MM-ddTHH",
+    "logFileMaxSize": 5242880,
+    "logFileMaxFiles": 5,
+    "mongodb": "mongodb://localhost/HeliosDb",
+    "mongodbTest": "mongodb://localhost/HeliosTestDb",
+    "mongoUser": "trex22",
+    "mongoPassword": "123456",
+    "apiMode": false,
+    "secret": "keybao097d cat 123$#@#&^%^#*&#*&^#*&#^*#^*&#^#&*$%$@**&$^*&&HVHJCVhgcvhgvhfdgh",
+    "themes": [
+        "cerulean",
+        "cosmo",
+        "cyborg",
+        "darkly",
+        "flatly",
+        "journal",
+        "lumen",
+        "paper",
+        "readable",
+        "sandstone",
+        "simplex",
+        "slate",
+        "spacelab",
+        "superhero",
+        "united",
+        "yeti"
+    ],
+    "defaultTheme": "cyborg",
+    "title": "HeliosJS",
+    "defaultProfilePictureURL": "/assets/profile.jpg",
+    "defaultBookPictureURL": "/assets/cover.jpg",
+    "defaultBrandingText": "HeliosJS",
+    "socket": {
+        "interval": 5,
+        "limit": 1440
+    }
+}

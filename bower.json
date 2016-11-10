@@ -1,7 +1,7 @@
 {
-  "name": "Borrow My Books",
-  "description": "Book lending and selling.",
-  "main": "",
+  "name": "HeliosJS",
+  "description": "An abstraction layer for node JS mongoose and express.",
+  "main": "app.js",
   "license": "MIT",
   "moduleType": [
     "globals",

@@ -1,5 +1,5 @@
 {
-  "name": "HeliosJS",
+  "name": "heliosjs",
   "version": "0.0.1",  
   "description": "An abstraction layer for node JS mongoose and express.",
   "main": "app.js",

@@ -121,11 +121,11 @@ module.exports = {
         var teapot = require('./routes/teapot');
         app.use('/teapot', teapot);
 
-        require('./routes/index.js')(app, passport);
-        require('./routes/admin.js')(app, passport);
-        require('./routes/accounts.js')(app, passport);
-        require('./routes/messages.js')(app, passport);
-        require('./routes/errors.js')(app);
+        if (config.apiMode) {
+            require('./api-router.js')(app, passport);
+        } else {
+            require('./web-router.js')(app, passport);
+        }
 
         return app;
     },

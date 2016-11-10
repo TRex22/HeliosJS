@@ -23,7 +23,7 @@
     "mongodbTest": "mongodb://localhost/HeliosTestDb",
     "mongoUser": "trex22",
     "mongoPassword": "123456",
-    "apiMode": false,
+    "apiMode": true,
     "secret": "keybao097d cat 123$#@#&^%^#*&#*&^#*&#^*#^*&#^#&*$%$@**&$^*&&HVHJCVhgcvhgvhfdgh",
     "themes": [
         "cerulean",

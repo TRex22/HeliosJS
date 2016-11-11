@@ -44,9 +44,8 @@ module.exports = function(app, passport) {
                 req = userHelper.processUser(req);
 
                 var userLog = yield userHelper.getUserLog(req.user._id);
-                var userStats = yield userHelper.getUserActivity(req.user._id);
 
-                res.render('accounts/user', { site: app.locals.site, user: req.user, req: req, userLog: userLog, userStats: userStats });
+                res.render('accounts/user', { site: app.locals.site, user: req.user, req: req, userLog: userLog });
             }
         })
     );
@@ -119,9 +118,8 @@ module.exports = function(app, passport) {
                     userInfo = yield userHelper.getUser(req.params.userId);
                     if (userInfo) {
                         var userLog = yield userHelper.getUserLog(userInfo._id);
-                        var userStats = yield userHelper.getUserActivity(userInfo._id);
 
-                        res.render('accounts/user', { site: app.locals.site, user: req.user, userInfo: userInfo, req: req, userLog: userLog, userStats: userStats });
+                        res.render('accounts/user', { site: app.locals.site, user: req.user, userInfo: userInfo, req: req, userLog: userLog });
                     } else {
                         req.flash('error', "No user of that id.");
                         res.redirect(req.session.backURL || '/');

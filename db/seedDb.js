@@ -14,71 +14,71 @@ var co = require('co');
 
 var userHelper = require('../services/userHelper.js');
 
-function system() {
-    var iSystemDefaults = new systemDefaults({
-        DefaultProfilePictureURL: "/assets/avatar.png",
-        DefaultBookPictureURL: "/assets/cover.jpg",
-        DefaultTheme: "cyborg",
-        DefaultBrandingText: "HeliosJS",
-        Title: "HeliosJS"
-    });
-    iSystemDefaults.save();
-    logger.warn("created systemDefaults");
 
-    var schoolObj = require('./school-domains');
-    var iSchoolDomain = new schoolDomain({
-        date: new Date(),
-        category: schoolObj.domains.category,
-        domains: schoolObj.domains.domain
-    });
-    iSchoolDomain.save();
-    logger.warn("created schoolDomain");
+//seed
+var iSystemDefaults = new systemDefaults({
+    DefaultProfilePictureURL: "/assets/avatar.png",
+    DefaultBookPictureURL: "/assets/cover.jpg",
+    DefaultTheme: "cyborg",
+    DefaultBrandingText: "HeliosJS",
+    Title: "HeliosJS"
+});
+iSystemDefaults.save();
+logger.warn("created systemDefaults");
 
-    var iUser = new user({
-        username: "Admin",
-        email: "contact@jasonchalom.com",
-        salt: null,
-        hash: null,
-        name: "Administrator",
-        address: "Room 13",
-        phone: "1234567890",
-        interests: [],
-        picUrl: "http://www.lets-develop.com/wp-content/themes/olivias_theme/images/custom-avatar-admin.jpg",
-        userRole: ["admin"],
-        lastLoginDate: null,
-        registrationDate: new Date(),
-        money: 1000000,
-        isStudent: false
-    });
+var schoolObj = require('./school-domains');
+var iSchoolDomain = new schoolDomain({
+    date: new Date(),
+    category: schoolObj.domains.category,
+    domains: schoolObj.domains.domain
+});
+iSchoolDomain.save();
+logger.warn("created schoolDomain");
 
-    iUser.salt = iUser.generateSalt();
-    iUser.hash = iUser.generateHash("123456");
-    iUser.save();
-    logger.warn("created admin user");
+var iUser = new user({
+    username: "Admin",
+    email: "contact@jasonchalom.com",
+    salt: null,
+    hash: null,
+    name: "Administrator",
+    address: "Room 13",
+    phone: "1234567890",
+    interests: [],
+    picUrl: "http://www.lets-develop.com/wp-content/themes/olivias_theme/images/custom-avatar-admin.jpg",
+    userRole: ["admin"],
+    lastLoginDate: null,
+    registrationDate: new Date(),
+    money: 1000000,
+    isStudent: false
+});
 
-    iUser2 = new user({
-        username: "User",
-        email: "user@jasonchalom.com",
-        salt: null,
-        hash: null,
-        name: "User",
-        address: "Room 13",
-        phone: "1234567890",
-        interests: [],
-        picUrl: null,
-        userRole: [],
-        lastLoginDate: null,
-        registrationDate: new Date(),
-        money: 1000,
-        isStudent: true
-    });
-    iUser2.salt = iUser.generateSalt();
-    iUser2.hash = iUser.generateHash("123456");
-    iUser2.save();
-    logger.warn("created user");
-}
+iUser.salt = iUser.generateSalt();
+iUser.hash = iUser.generateHash("123456");
+iUser.save();
+logger.warn("created admin user");
 
-var go = function() {
+iUser2 = new user({
+    username: "User",
+    email: "user@jasonchalom.com",
+    salt: null,
+    hash: null,
+    name: "User",
+    address: "Room 13",
+    phone: "1234567890",
+    interests: [],
+    picUrl: null,
+    userRole: [],
+    lastLoginDate: null,
+    registrationDate: new Date(),
+    money: 1000,
+    isStudent: true
+});
+iUser2.salt = iUser.generateSalt();
+iUser2.hash = iUser.generateHash("123456");
+iUser2.save();
+logger.warn("created user");
+
+function go() {
     co(function*() {
         var adminId;
         var userId;
@@ -127,15 +127,16 @@ var go = function() {
     });
 }
 
+/*system();*/
 setTimeout(function() {
-    system();
+    /*system();*/
 }, 1000);
 setTimeout(function() {
-    system();
+    /*system();*/
     go();
 }, 1000);
 
 module.exports = {
-    go: go,
-    system: system
+    go: go/*,
+    system: system*/
 }

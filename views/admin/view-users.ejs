@@ -33,9 +33,8 @@
                     <li><strong>Last Seen:</strong> <%= site.moment(users[i].lastLoginDate).format('LLL'); %></li>
                     <li><strong>Joined:</strong> <%= site.moment(users[i].registrationDate).format('LLL'); %></li>
                     <br/>
-                    <div>
+                    <div>                      
                       <a href="/user/<%= users[i]._id %>/settings" class="btn btn-primary" style="color: grey;"> Edit User Details</a> 
-                      <a href="/user/<%= users[i]._id %>/reports" class="btn btn-danger" style="color: grey;"> Reports Against User</a> 
                     </div>
                 </ul>
               </div>

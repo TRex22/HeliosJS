@@ -49,7 +49,13 @@ var iUser = new user({
     lastLoginDate: null,
     registrationDate: new Date(),
     money: 1000000,
-    isStudent: false
+    isStudent: false,
+    social: {
+        facebook: null,
+        github: null,
+        twitter: null,
+        googleplus: null
+    }
 });
 
 iUser.salt = iUser.generateSalt();
@@ -71,7 +77,13 @@ iUser2 = new user({
     lastLoginDate: null,
     registrationDate: new Date(),
     money: 1000,
-    isStudent: true
+    isStudent: true,
+    social: {
+        facebook: null,
+        github: null,
+        twitter: null,
+        googleplus: null
+    }
 });
 iUser2.salt = iUser.generateSalt();
 iUser2.hash = iUser.generateHash("123456");
@@ -137,6 +149,7 @@ setTimeout(function() {
 }, 1000);
 
 module.exports = {
-    go: go/*,
-    system: system*/
+    go: go
+        /*,
+            system: system*/
 }

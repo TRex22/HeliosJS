@@ -24,21 +24,8 @@
             <li class="list-group-item text-right"><span class="pull-left"><strong>Last Seen</strong></span> <%= site.moment(user.lastLoginDate).format('LLL'); %></li>
             <li class="list-group-item text-right"><span class="pull-left"><strong>Joined</strong></span> <%= site.moment(user.registrationDate).format('LLL'); %></li>
           </ul>               
-
-
-         <!--  Social Media Panel. Will implement later -->
-          <!-- <div class="panel panel-default">
-            <div class="panel-heading">Social Media</div>
-            <div class="panel-body">
-              <img src="assets/glyphicons-social/glyphicons-social-31-facebook.png">  
-              <img src="assets/glyphicons-social/glyphicons-social-22-github.png">  
-              <img src="assets/glyphicons-social/glyphicons-social-32-twitter.png">  
-              <img src="assets/glyphicons-social/glyphicons-social-3-google-plus.png">  
-              <img src="assets/glyphicons-social/glyphicons-social-1-pinterest.png">  
-            </div>
-          </div> -->
           
-      </div><!--/col-4-->
+      </div>
       <div class="col-sm-5">         
               
           <div class="tab-content">
@@ -60,8 +47,8 @@
                 </table>
               </div>
 
-              <ul class="list-group">
-                <li class="list-group-item text-muted">Interests</li>
+              <ul class="panel-default list-group">
+                <li class="panel-heading list-group-item text-muted">Interests</li>
                 <% if (user.interests.length > 0) {%>
                   <% for(var i=0; i<user.interests.length; i++) {%>
                     <li class="list-group-item"><span><strong><%=user.interests[i]%></strong></span></li>
@@ -70,6 +57,34 @@
                   <li class="list-group-item text-right"><span class="pull-left"><strong></strong></span>No Interests</li>
                 <%}%>
               </ul>
+
+              <!--  Social Media Panel. Will implement later -->
+              <% if (user.social.facebook || user.social.github || user.social.twitter || user.social.googleplus) { %>
+                <div class="panel panel-default">
+                  <div class="panel-heading">Social Media</div>
+                  <div class="panel-body">
+                    <% if (user.social.facebook) { %>
+                      <img src="assets/glyphicons-social/glyphicons-social-31-facebook.png" href="user.social.facebook">  
+                    <% } %>
+                    <% if (user.social.github) { %>
+                      <img src="assets/glyphicons-social/glyphicons-social-22-github.png" href="user.social.github">  
+                    <% } %>
+                    <% if (user.social.twitter) { %>
+                      <img src="assets/glyphicons-social/glyphicons-social-32-twitter.png" href="user.social.twitter">
+                    <% } %>
+                    <% if (user.social.googleplus) { %>
+                      <img src="assets/glyphicons-social/glyphicons-social-3-google-plus.png" href="user.social.googleplus">
+                    <% } %>
+                  </div>
+                </div>
+              <% } else { %>
+                <div class="panel panel-default">
+                  <div class="panel-heading">Social Media</div>
+                  <div class="panel-body">
+                    <li class="list-group-item text-right"><span class="pull-left"><strong></strong></span>No Social Media Connected</li>
+                  </div>
+                </div>
+              <% } %>
 
               <% if(!user.isMain) { %>
                 <% if(user.username !== userInfo) { %>

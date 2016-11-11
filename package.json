@@ -1,6 +1,6 @@
 {
   "name": "heliosjs",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "An abstraction layer for node JS mongoose and express.",
   "main": "app.js",
   "private": false,

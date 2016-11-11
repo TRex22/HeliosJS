@@ -17,7 +17,13 @@ var userSchema = mongoose.Schema({
         userRole: [String],
         lastLoginDate: Date,
         registrationDate: Date,
-        isStudent: Boolean
+        isStudent: Boolean,
+        social: {
+            facebook: String,
+            github: String,
+            twitter: String,
+            googleplus: String
+        }
 }, { strict: false, collection: 'User' });
 
 userSchema.methods.generateSalt = function() {

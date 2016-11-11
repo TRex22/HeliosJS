@@ -136,15 +136,14 @@ function getPath(req) {
 /* istanbul ignore next */
 function auth(req, res, site, admin, sysinfo) {
     if (req.user) {
-        /*        if(!req.user.isLoggedIn){
-                    res.redirect('/login');
-                }*/
         if (!isAdmin(req.user) && admin) {
             res.status(401);
             url = req.url;
             req = processUser(req);
             if (!sysinfo) {
-                res.render('errors/401.ejs', { title: '401: Unauthorized', url: url, statusCode: 401, site: site, user: req.user });
+                /*res.render('errors/401.ejs', { title: '401: Unauthorized', url: url, statusCode: 401, site: app.locals.site, user: req.user, req: req }); //TODO fix for api*/
+                /*res.status(401).redirect('/401').end();*/
+                res.status(401).render('errors/401.ejs', { title: '401: Unauthorized', url: url, statusCode: 401, site: app.locals.site, user: req.user, req: req });
             }
             return false;
 

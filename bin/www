@@ -8,7 +8,6 @@ var pkg = require('../package.json');
 var config = require('../config.json');
 
 var app = require('../app').app(pkg, config);
-app.passport = null;
 var debug = require('debug')('src:server');
 var http = require('http');
 

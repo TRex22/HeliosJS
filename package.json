@@ -42,6 +42,7 @@
     "jshint": "^2.9.1",
     "mocha": "^2.0.1",
     "moment": "^2.11.2",
+    "mongo-express": "^0.32.0",
     "mongodb": "^2.2.5",
     "mongoose": "4.4.1",
     "morgan": "1.6.1",

@@ -145,8 +145,8 @@ function auth(req, res, site, admin, sysinfo) {
                 /*res.status(401).redirect('/401').end();*/
                 res.status(401).render('errors/401.ejs', { title: '401: Unauthorized', url: url, statusCode: 401, site: app.locals.site, user: req.user, req: req });
             }
-            return false;
 
+            return false;
         } else {
             return true;
         }

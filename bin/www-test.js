@@ -4,16 +4,21 @@
  * Module dependencies.
  */
 
-var app = require('../app').app;
+var pkg = require('../package.json');
+var config = require('../config.json');
+
+var app = require('../app').app(pkg, config);
 var debug = require('debug')('src:server');
 var http = require('http');
-var config = require('../config');
 
 /**
  * Get port from environment and store in Express.
  */
 
 var port = normalizePort(config.port);
+if (process.env.NODE_ENV === 'production') {
+  var port = normalizePort(process.env.PORT || config.port); //for heroku
+} 
 app.set('port', port);
 
 /**

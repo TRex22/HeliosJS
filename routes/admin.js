@@ -18,6 +18,11 @@ var messageHelper = require('../services/messageHelper');
 var userMessage = mongoose.model('UserMessage', require('../models/userMessage'));
 var systemMessage = mongoose.model('SystemMessage', require('../models/systemMessage'));
 
+if (config.mongo_express.active) {
+    var mongo_express = require('mongo-express/lib/middleware');
+    var mongo_express_config = require('../config/mongo_express_config');
+}
+
 module.exports = function(app, passport) {
     app.get('/admin',
         function(req, res, next) {
@@ -131,4 +136,8 @@ module.exports = function(app, passport) {
             }
         }
     );
+
+    if (config.mongo_express.active) {
+        app.get('/admin/mongo_express', mongo_express(mongo_express_config));
+    }   
 };

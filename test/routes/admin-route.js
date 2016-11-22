@@ -16,8 +16,6 @@ var www = require('../../bin/www-test');
 var mongoose = require('../../config/db.js').mongoose;
 var systemDefaults = require('../../models/systemDefaults');
 var sysDefault = mongoose.model('SystemDefaults', systemDefaults);
-var book = require('../../models/book');
-var Book = mongoose.model('Book', book);
 var User = mongoose.model('User', require('../../models/user'));
 
 var clear = require('../../db/clearDb');

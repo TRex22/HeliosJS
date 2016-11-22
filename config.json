@@ -1,16 +1,16 @@
 {
-	"filePaths": {
-		"js": "./src/*.js",
-		"css": "./public/*.css",
-		"less": "./public/stylesheets/main.less",
-		"html": "./views/*.html",
-		"bowerRoot": "./bower_components",
+    "filePaths": {
+        "js": "./src/*.js",
+        "css": "./public/*.css",
+        "less": "./public/stylesheets/main.less",
+        "html": "./views/*.html",
+        "bowerRoot": "./bower_components",
         "logPath": "./logs"
-	},
+    },
     "security": {
         "saltLength": 256
     },
-    "port": 8080,    
+    "port": 8080,
     "liveReloadPort": 35729,
     "appPath": "./app.js",
     "startPath": "./bin/www",
@@ -51,5 +51,31 @@
     "socket": {
         "interval": 5,
         "limit": 1440
+    },
+    "mongo_express": {
+        "active": false,
+        "whitelist": [],
+        "blacklist": [],
+        "site": {
+            "baseUrl": "/",
+            "cookieKeyName": "mongo-express",
+            "cookieSecret": "cookiesecret",
+            "host": "localhost",
+            "port": 8080,
+            "requestSizeLimit": "50mb",
+            "sessionSecret": "sessionsecret",
+            "sslCert": "",
+            "sslEnabled": false,
+            "sslKey": ""
+        },
+        "useBasicAuth": "",
+
+        "basicAuth": {
+            "username": "admin",
+            "password": "pass"
+        },
+        "admin": false,
+        "adminUsername": "",
+        "adminPassword": ""
     }
 }
